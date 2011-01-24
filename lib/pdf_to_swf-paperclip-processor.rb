@@ -6,10 +6,10 @@ module Paperclip
     
     def initialize file, options = {}, attachment = nil
       super
-      @file   = file
-      @params  = options[:params]
-      @current_format      = File.extname(@file.path)
-      @basename            = File.basename(@file.path, @current_format)
+      @file           = file
+      @params         = options[:params]
+      @current_format = File.extname(@file.path)
+      @basename       = File.basename(@file.path, @current_format)
     end
 
     def make
