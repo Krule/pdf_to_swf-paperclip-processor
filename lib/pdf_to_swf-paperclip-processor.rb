@@ -2,7 +2,7 @@ require "paperclip"
 module Paperclip
     class PdfToSwf < Processor
     
-    attr_accessor :params
+    attr_accessor :file, :params, :format
     
     def initialize file, options = {}, attachment = nil
       super
@@ -10,11 +10,12 @@ module Paperclip
       @params         = options[:params]
       @current_format = File.extname(@file.path)
       @basename       = File.basename(@file.path, @current_format)
+      @format         = options[:format]
     end
 
     def make
       src = @file
-      dst = Tempfile.new([@basename.tableize])
+      dst = Tempfile.new([@basename, @format ? ".#{@format}" : ''])
       begin
         parameters = []
         parameters << @params
