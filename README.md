@@ -40,40 +40,19 @@ Use it as you would any other Paperclip processor. In your model:
 
     class Document < ActiveRecord::Base
       
-      has_attached_file :document,
-      
-      :styles => {
-       :original => { :params => "-z -j 100 -qq -G" }
-      },
-      :processors => [:pdf_to_swf]
+      has_attached_file :pdf,
+                    :styles => {
+                       :swf => { 
+                         :params => "-z -j 100 -qq -G",
+                         :format => "swf" }
+                      },
+                      :processors => [:pdf_to_swf]
       
     end
 
                       
-which will convert your pdf document into swf. However, pdf extension will be retained.
+which will convert your pdf document into swf , and keep both files (.swf and .pdf) on the server
 
-In order to avoid this I have created a method to normalize file name and change it's extension.
-    
-    class Document < ActiveRecord::Base
-  
-      has_attached_file :document,
-      :styles => {
-       :original => { :params => "-z -j 100 -qq -G" }
-      },
-      :processors => [:pdf_to_swf],
-      :path => ":rails_root/public/system/:attachment/:normalized_file_name",
-      :url => "/system/:attachment/:normalized_file_name"
-  
-      Paperclip.interpolates :normalized_file_name do |attachment, style|
-        attachment.instance.normalized_file_name
-      end
-
-      def normalized_file_name
-        file = self.document_file_name.gsub( /[^a-zA-Z0-9_\-\.]/, '_')
-        file = "#{self.id}-#{File.basename(file, ".pdf")}".slice(0...32)
-        "#{file}.swf".downcase
-      end
-    end
 
 However, if you think you can do better, feel free to fork.
 
