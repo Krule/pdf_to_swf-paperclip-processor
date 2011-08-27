@@ -5,7 +5,6 @@ This gem is Paperclip processor, utilizing swftools in order to convert uploaded
 ## Requirements ##
 
 * [Paperclip][0] ~> 2.3
-* [Ruby on Rails][1] ~> 3
 * [SwfTools][2]
 
 ## Installation ##
@@ -93,7 +92,6 @@ Have fun with it and drop me a note if you like it.
 
 
 [0]: https://github.com/thoughtbot/paperclip
-[1]: http://rubyonrails.org/
 [2]: http://www.swftools.org/
 [3]: http://mxcl.github.com/homebrew/
 [5]: http://wiki.swftools.org/index.php/Pdf2swf
