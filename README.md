@@ -4,9 +4,10 @@ This gem is Paperclip processor, utilizing swftools in order to convert uploaded
 
 ## Requirements ##
 
-* [Paperclip][0] ~> 2.3
+* [Paperclip][0] ~> 2.4
 * [SwfTools][2]
 
+For older versions of paperclip (2.3 and below), please use v0.0.4 of this gem.
 ## Installation ##
 
 This gem is written and tested on Ruby on Rails 3 only. However, I see no reason why it should not work on earlier versions, as long as Paperclip is functional.
@@ -17,21 +18,19 @@ In order to install it, add
     
 to your Gemfile and run
 
-    bundle
+    bundle install
    
 in your console. Bundler should take care of all the rest.
 
 ## SwfTools Instalation ##
 
-Install [swftools][2] using your favorite package manager. On OS X, the easiest way to do it is by using [Homebrew][3].
+Install [swftools][2] from source or using your favorite package manager. On OS X, the easiest way to do it is by using [Homebrew][3].
 
     brew install swftools
     
-Various linux distributions should use similar methods with their respected package managers.
+Various Linux distributions should use similar methods with their respected package managers.
 
 If you are using Windows, you are in luck (this time), swftools also has a Windows binary.
-
-Otherwise, just install from the source.
 
 ## Using Processor ##
 
@@ -51,9 +50,6 @@ Use it as you would any other Paperclip processor. In your model:
 
                       
 which will convert your pdf document into swf , and keep both files (.swf and .pdf) on the server
-
-
-However, if you think you can do better, feel free to fork.
 
 ### Params ###
 
@@ -84,9 +80,11 @@ Params have not been extrapolated and are passed directly to pdf2swf application
     -I , --info                    Don't do actual conversion, just display a list of all pages in the PDF.
     -Q , --maxtime n               Abort conversion after n seconds. Only available on Unix.
 
+I do have a to-do to make this more readable for one of the next releases.
+
 ## Release info ##
 
-Be warned, this gem is released as early alpha version and if you are using it you are doing so on your own responsibility.
+Be warned, this gem is released as early beta version. If you are using it you are doing so on your own responsibility.
 
 Have fun with it and drop me a note if you like it.
 
@@ -94,4 +92,5 @@ Have fun with it and drop me a note if you like it.
 [0]: https://github.com/thoughtbot/paperclip
 [2]: http://www.swftools.org/
 [3]: http://mxcl.github.com/homebrew/
+[4]: http://www.swftools.org/faq.html
 [5]: http://wiki.swftools.org/index.php/Pdf2swf
