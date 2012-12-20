@@ -80,13 +80,27 @@ Params have not been extrapolated and are passed directly to pdf2swf application
     -I , --info                    Don't do actual conversion, just display a list of all pages in the PDF.
     -Q , --maxtime n               Abort conversion after n seconds. Only available on Unix.
 
-I do have a to-do to make this more readable for one of the next releases.
-
 ## Release info ##
 
 Be warned, this gem is released as early beta version. If you are using it you are doing so on your own responsibility.
 
 Have fun with it and drop me a note if you like it.
+
+## LICENCE ##
+
+ DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE 
+                    Version 2, December 2004 
+
+ Copyright (C) 2004 Armin Pašalić
+
+ Everyone is permitted to copy and distribute verbatim or modified 
+ copies of this license document, and changing it is allowed as long 
+ as the name is changed. 
+
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE 
+   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION 
+
+  0. You just DO WHAT THE FUCK YOU WANT TO. 
 
 
 [0]: https://github.com/thoughtbot/paperclip
