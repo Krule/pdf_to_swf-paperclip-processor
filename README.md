@@ -88,6 +88,8 @@ Have fun with it and drop me a note if you like it.
 
 ## LICENCE ##
 
+This work is released under WTFPL licence. For more details:
+
 
                DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE 
                         Version 2, December 2004 
